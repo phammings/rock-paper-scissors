@@ -1,5 +1,6 @@
 #   Rock Paper Scissors Project
 [TheOdinProject](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors) - Javascript Rock Paper Scissors Project
+[Project Demo](https://phammings.github.io/rock-paper-scissors/)
 
 ##  Rules
 Rock Paper Scissors is played by have each player choose simultaneously one of the following: rock, paper, or scissors.
