@@ -1,3 +1,4 @@
+//Helper function for computer to randomly generate a play
 function computerPlay()
 {
     computerInput = (Math.round(Math.random() * 3));
