@@ -26,6 +26,7 @@ function equalsIgnoreCase(a, b)
         : a === b;
 }
 
+//Helper function to check if user input is a valid play
 function isValidPlay(playerSelection)
 {
     return equalsIgnoreCase(playerSelection, "Rock") || 
