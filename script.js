@@ -26,6 +26,27 @@ function equalsIgnoreCase(a, b)
         : a === b;
 }
 
+function playRound(playerSelection, computerSelection)
+{
+    if (equalsIgnoreCase(playerSelection, computerSelection))
+    {
+        let roundStatement = `It's a draw! ${playerSelection} ties with ${computerSelection}`;
+        return roundStatement;
+    }
+    else if (equalsIgnoreCase(playerSelection, "Paper") && equalsIgnoreCase(computerSelection, "Rock") ||
+        equalsIgnoreCase(playerSelection, "Rock") && equalsIgnoreCase(computerSelection, "Scissors") ||
+        equalsIgnoreCase(playerSelection, "Scissors") && equalsIgnoreCase(computerSelection, "Paper"))
+    {
+        let roundStatement = `You Win! ${playerSelection} beats ${computerSelection}`;
+        return roundStatement;
+    }
+    else
+    {
+        let roundStatement = `You Lose! ${computerSelection} beats ${playerSelection}`;
+        return roundStatement;
+    }
+    
+}
 
 const playerSelection = "rock";
 const computerSelection = computerPlay();
