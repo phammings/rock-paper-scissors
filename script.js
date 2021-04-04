@@ -35,32 +35,87 @@ function isValidPlay(playerSelection)
             equalsIgnoreCase(playerSelection, "Scissors");
 }
 
+//Plays 1 round of rock, paper, scissors
 function playRound(playerSelection, computerSelection)
 {
+    playerSelection = prompt("Enter your play");
+    computerSelection = computerPlay();
     if (!(isValidPlay(playerSelection)))
     {
-        return "Invalid Play. Choose either rock, paper, or scissors.";
+        console.log("Invalid Play. Choose either rock, paper, or scissors.");
+        playRound(playerSelection, computerPlay());
     }
     else if (equalsIgnoreCase(playerSelection, computerSelection))
     {
-        let roundStatement = `It's a draw! ${playerSelection} ties with ${computerSelection}`;
-        return roundStatement;
+        console.log(`It's a draw! ${playerSelection} ties with ${computerSelection}, try again!`);
+        playRound(playerSelection, computerPlay());
     }
     else if (equalsIgnoreCase(playerSelection, "Paper") && equalsIgnoreCase(computerSelection, "Rock") ||
         equalsIgnoreCase(playerSelection, "Rock") && equalsIgnoreCase(computerSelection, "Scissors") ||
         equalsIgnoreCase(playerSelection, "Scissors") && equalsIgnoreCase(computerSelection, "Paper"))
     {
-        let roundStatement = `You Win! ${playerSelection} beats ${computerSelection}`;
+        let roundStatement = console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        playerScore++;
         return roundStatement;
     }
     else
     {
-        let roundStatement = `You Lose! ${computerSelection} beats ${playerSelection}`;
+        let roundStatement = console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+        computerScore++;
         return roundStatement;
     }
     
 }
 
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+//Checks final score to determine winner
+function checkScore(playerScore, computerScore)
+{
+    if (playerScore>computerScore)
+    {
+        return `Congratulations! You won by ${ playerScore - computerScore } points!`
+    }
+    else{
+        return `You lost by ${ computerScore - playerScore } points!`
+    }
+}
+
+//Reset game scores and selections
+function resetGame()
+{
+    playerScore = 0;
+    computerScore = 0;
+    playerSelection = "";
+    computerSelection= "";
+    return;
+}
+
+//Prompts user to play again
+function playAgain()
+{
+    let ans = prompt("Play again? (Y/N)");
+    return equalsIgnoreCase(ans, "Y") ? game() : console.log("Thanks for playing!");
+}
+
+//Plays a full game of 5 rounds of rock, paper, scissors with a score 
+function game()
+{
+    console.log("Rock Paper Scissors (5 Rounds):")
+    for (var i=1; i<=5; i++)
+    {
+        console.log(`Round ${i}:`);
+        playRound(playerSelection, computerSelection);
+    }
+    console.log(`Score:
+                Player:     ${ playerScore }
+                Computer    ${ computerScore }`
+                );
+    console.log(checkScore(playerScore, computerScore));
+    playAgain();
+    resetGame();
+}
+
+//Global variables
+let playerScore = 0;
+let computerScore = 0;
+let playerSelection = "";
+let computerSelection= "";
