@@ -26,9 +26,20 @@ function equalsIgnoreCase(a, b)
         : a === b;
 }
 
+function isValidPlay(playerSelection)
+{
+    return equalsIgnoreCase(playerSelection, "Rock") || 
+            equalsIgnoreCase(playerSelection, "Paper") || 
+            equalsIgnoreCase(playerSelection, "Scissors");
+}
+
 function playRound(playerSelection, computerSelection)
 {
-    if (equalsIgnoreCase(playerSelection, computerSelection))
+    if (!(isValidPlay(playerSelection)))
+    {
+        return "Invalid Play. Choose either rock, paper, or scissors.";
+    }
+    else if (equalsIgnoreCase(playerSelection, computerSelection))
     {
         let roundStatement = `It's a draw! ${playerSelection} ties with ${computerSelection}`;
         return roundStatement;
