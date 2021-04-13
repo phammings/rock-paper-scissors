@@ -2,7 +2,7 @@ const selection = ["rock", "paper", "scissors"];
 
 //Helper function for computer to randomly generate a play
 function computerPlay() {
-  return selection[Math.round(Math.random() * (selection.length - 1)) + 1];
+  return selection[Math.round(Math.random() * (selection.length - 1))];
 }
 
 //Helper function to compare two strings that are case insensitive
