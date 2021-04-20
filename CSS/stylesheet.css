@@ -1,0 +1,262 @@
+.hidden {
+  display: none;
+}
+
+#subtitle {
+  opacity: 0;
+}
+
+#subtitle.drop-down {
+  animation-name: drop-down;
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.58, 0.3, 0.49, 1.39);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes drop-down {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+    pointer-events: none;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: all;
+  }
+}
+
+span {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.fade {
+  opacity: 1;
+}
+
+.img-fade-out {
+  animation-name: img-fade-out;
+  animation-duration: 800ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes img-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+#intro1.skip-anime,
+#intro2.skip-anime,
+#intro3.skip-anime {
+  animation: fade-out;
+  animation-duration: 0;
+}
+
+span.skip {
+  transition: all 0.1s cubic-bezier(0, 1.4, 0.45, 0.89);
+}
+
+#intro1.fade-out,
+#intro2.fade-out,
+#intro3.fade-out,
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 800ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.introImg,
+.opacity0,
+.endScreen {
+  opacity: 0;
+}
+
+.img-fade-in {
+  animation: fadeIn 3s;
+  animation-delay: 2s;
+}
+
+.end-fade-in {
+  animation: fadeIn 3s;
+}
+
+.game-fade-in {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.end-screen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#end-video {
+  min-width: 100%;
+  min-height: 100%;
+
+  width: auto;
+  height: auto;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.roundWinner,
+.playAgain {
+  position: absolute;
+  z-index: 1;
+}
+
+#btn-container,
+h1,
+h2,
+.score,
+#score-label,
+.roundResult {
+  display: flex;
+  justify-content: center;
+}
+
+.roundResult {
+  font-family: "Permanent Marker", cursive;
+  font-size: 25px;
+}
+
+.playAgain {
+  font-family: "Hanalei Fill", cursive;
+  color: white;
+  text-align: center;
+  margin: 14em auto auto auto;
+  width: 61.5%;
+  height: 3em;
+  opacity: 0.75;
+  font-size: 22px;
+}
+
+.playAgain button {
+  background-color: black;
+  border: none;
+  transition: 0.1s ease all;
+}
+.playAgain button:hover {
+  opacity: 1;
+  scale: 1.05;
+}
+
+.roundWinner {
+  white-space: nowrap;
+  font-size: 40px;
+  color: white;
+  margin: 6.5em auto auto auto;
+  width: 100%;
+  border-radius: 4px;
+}
+
+#btn-container {
+  margin-top: 6em;
+}
+
+h1,
+h2 {
+  font-family: "Permanent Marker", cursive;
+  margin: 1em;
+  font-size: 40px;
+}
+
+#label-you {
+  font-size: 50px;
+  padding-right: 5em;
+}
+
+#label-haters {
+  font-size: 50px;
+  margin-left: 1em;
+}
+
+p {
+  font-family: "Hanalei Fill", cursive;
+  text-align: center;
+  font-size: 25px;
+}
+
+#rock img,
+#paper img,
+#scissors img {
+  display: flex;
+  width: 17em;
+}
+
+#rock img {
+  margin-right: 10em;
+}
+#scissors img {
+  margin-left: 10em;
+}
+
+#rock img,
+#scissors img,
+#paper img {
+  transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
+  opacity: 0.75;
+  transition: 0.2s ease all;
+}
+
+#rock img:hover,
+#scissors img:hover,
+#paper img:hover {
+  transform: perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg)
+    scale(1);
+  opacity: 1;
+}
+
+#da-baby-intro {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#score-label {
+  margin-top: 1em;
+}
+
+.score {
+  font-size: 50px;
+}
+
+#you-label {
+  padding-right: 7.9em;
+}

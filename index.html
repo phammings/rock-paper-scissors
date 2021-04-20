@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="CSS/stylesheet.css" />
     <title>Rock Paper Scissors</title>
+    <link rel="icon" href="Images/da-baby.png" type="image/png" />
     <meta charset="UTF-8" />
   </head>
   <body>
     <main id="main-content" class="">
-      <h1>SAVE DABABY!</h1>
-      <p>DaBaby's evil record label turned him into a convertible...</p>
-      <img src="Images/da-convertible.png" alt="da-convertible" />
-      <p>He needs your help to win rock, paper, scissors and defeat them...</p>
-      <p>Can you save DaBaby?</p>
-      <p>Rock, Paper, Scissors!</p>
+      <h1>SAVING RAP</h1>
+      <p class="animate" id="intro1">
+        DaBaby's haters turned him into a convertible...
+      </p>
+      <p class="hidden" id="intro2">
+        He needs your help to win 5 rounds of rock, paper, scissors to turn him
+        back to normal...
+      </p>
+      <p class="hidden" id="intro3">Can you save DaBaby?</p>
+      <img
+        class="introImg img-fade-in"
+        id="da-baby-intro"
+        src="Images/da-convertible.png"
+        alt="da-convertible"
+      />
 
-      <div id="rock" class="button">
-        <img src="Images/rock.png" alt="rock" />
-      </div>
+      <h2 id="subtitle">Rock, Paper, Scissors!</h2>
 
-      <div id="paper" class="button">
-        <img src="Images/paper.png" alt="paper" />
-      </div>
+      <div class="hidden opacity0" id="game-container">
+        <div id="btn-container">
+          <div id="rock" class="button">
+            <img src="Images/rock.png" alt="Rock" />
+          </div>
 
-      <div id="scissors" class="button">
-        <img src="Images/scissors.png" alt="scissors" />
+          <div id="paper" class="button">
+            <img src="Images/paper.png" alt="Paper" />
+          </div>
+
+          <div id="scissors" class="button">
+            <img src="Images/scissors.png" alt="Scissors" />
+          </div>
+        </div>
+
+        <div id="score-label">
+          <p class="label" id="label-you">You</p>
+          <p class="label" id="label-haters">Haters</p>
+        </div>
+
+        <div class="score">
+          <p id="you-label">0</p>
+          <p id="haters-label">0</p>
+        </div>
+
+        <div class="roundResult"></div>
       </div>
     </main>
 
-    <div id="end-screen" class=""></div>
+    <div id="end-screen" class="endScreen">
+      <div class="roundWinner"></div>
+
+      <div class="playAgain"></div>
+
+      <video autoplay muted loop id="end-video"></video>
+      <audio autoplay loop id="end-audio"></audio>
+    </div>
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
