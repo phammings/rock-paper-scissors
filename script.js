@@ -1,6 +1,5 @@
 window.onload = intro();
 
-//Global variables
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection = "";
@@ -47,12 +46,10 @@ computerScoreDiv.classList.add("score");
 
 const selection = ["Rock", "Paper", "Scissors"];
 
-//Helper function for computer to randomly generate a play
 function computerPlay() {
   return selection[Math.round(Math.random() * (selection.length - 1))];
 }
 
-//Plays 1 round of rock, paper, scissors
 function playRound(playerSelection, computerSelection) {
   computerSelection = computerPlay();
   if (playerSelection === computerSelection) {
@@ -92,7 +89,6 @@ function losingEnd() {
   return;
 }
 
-//Checks final score to determine winner
 function declareWinner(playerScore, computerScore) {
   removeMainScreen();
   const endScreen = document.querySelector("#end-screen");
@@ -120,7 +116,6 @@ function declareWinner(playerScore, computerScore) {
   audio.appendChild(source2);
 }
 
-//Reset game scores and selections
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
@@ -129,7 +124,6 @@ function resetGame() {
   location.reload();
 }
 
-//Prompts user to play again
 function playAgain() {
   playAgainBtn.textContent = "Play Again?";
   playAgainContainer.appendChild(playAgainBtn);
@@ -229,4 +223,5 @@ function fadeIn() {
 }
 
 //add function to skip intro
-//CSS website
+//after playAgain() skip intro screen instead of window.reload()
+//add media queries
