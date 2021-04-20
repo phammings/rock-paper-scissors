@@ -260,3 +260,84 @@ p {
 #you-label {
   padding-right: 7.9em;
 }
+
+@media (max-width: 1100px) {
+  #rock img,
+  #scissors img,
+  #paper img {
+    width: 12em;
+  }
+  h1,
+  h2 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 20px;
+  }
+  #label-you,
+  #label-haters,
+  .score,
+  .roundResult {
+    font-size: 40px;
+  }
+  #rock img {
+    margin-right: 8em;
+  }
+  #scissors img {
+    margin-left: 8em;
+  }
+}
+
+@media (max-width: 850px) {
+  #rock img,
+  #scissors img,
+  #paper img {
+    width: 8em;
+  }
+  h1,
+  h2 {
+    font-size: 25px;
+  }
+  p {
+    font-size: 17px;
+  }
+  #label-you,
+  #label-haters,
+  .score,
+  .roundResult {
+    font-size: 30px;
+  }
+  #rock img {
+    margin-right: 6em;
+  }
+  #scissors img {
+    margin-left: 6em;
+  }
+}
+
+@media (max-width: 580px) {
+  #rock img,
+  #scissors img,
+  #paper img {
+    width: 6em;
+  }
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+  #label-you,
+  #label-haters,
+  .score,
+  .roundResult {
+    font-size: 20px;
+  }
+  #rock img {
+    margin-right: 5em;
+  }
+  #scissors img {
+    margin-left: 5em;
+  }
+}
