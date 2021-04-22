@@ -130,6 +130,14 @@ function playAgain() {
 }
 
 function intro() {
+  let val = true;
+  document.addEventListener("click", () => {
+    const span = document.querySelectorAll("span");
+    span.forEach((span) => {
+      loadGame(val);
+    });
+  });
+
   const endScreen = document.querySelector("#end-screen");
   endScreen.classList.add("hidden");
 
@@ -171,25 +179,44 @@ function intro() {
           intro3Span = Array.from(intro3Span);
 
           intro3Span[intro3Span.length - 1].ontransitionend = () => {
-            const subtitle = document.querySelector("#subtitle");
-
-            subtitle.classList.add("drop-down");
-
-            subtitle.addEventListener("animationend", () => {
-              const gameCtn = document.querySelector("#game-container");
-
-              setTimeout(function () {
-                gameCtn.classList.remove("opacity0");
-                gameCtn.classList.remove("hidden");
-                gameCtn.classList.add("game-fade-in");
-                gameCtn.classList.add("fade");
-              }, 300);
-            });
+            loadGame(!val);
           };
         });
       };
     });
   };
+}
+
+function skipIntro() {
+  const intro1 = document.querySelector("#intro1");
+  const intro2 = document.querySelector("#intro2");
+  const intro3 = document.querySelector("#intro3");
+  const img = document.querySelector("#da-baby-intro");
+  intro1.classList.add("hidden");
+  intro2.classList.add("hidden");
+  img.classList.add("hidden");
+  intro3.classList.remove("hidden");
+}
+
+function loadGame(val) {
+  if (val) {
+    skipIntro();
+  }
+
+  const subtitle = document.querySelector("#subtitle");
+
+  subtitle.classList.add("drop-down");
+
+  subtitle.addEventListener("animationend", () => {
+    const gameCtn = document.querySelector("#game-container");
+
+    setTimeout(function () {
+      gameCtn.classList.remove("opacity0");
+      gameCtn.classList.remove("hidden");
+      gameCtn.classList.add("game-fade-in");
+      gameCtn.classList.add("fade");
+    }, 300);
+  });
 }
 
 function fadeIn() {
@@ -224,4 +251,3 @@ function fadeIn() {
 
 //add function to skip intro
 //after playAgain() skip intro screen instead of window.reload()
-//add media queries
