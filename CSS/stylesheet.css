@@ -260,6 +260,10 @@ p {
 #you-label {
   padding-right: 7.9em;
 }
+#you-label,
+#haters-label {
+  margin-top: 0em;
+}
 
 @media (max-width: 1100px) {
   #rock img,
@@ -369,6 +373,6 @@ p {
   }
   #label-you,
   #haters-label {
-    margin-bottom: 0.53em;
+    margin-bottom: 0.5em;
   }
 }
