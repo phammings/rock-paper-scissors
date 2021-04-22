@@ -152,7 +152,7 @@ h2,
 
 .roundResult {
   font-family: "Permanent Marker", cursive;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .playAgain {
@@ -276,9 +276,11 @@ p {
   }
   #label-you,
   #label-haters,
-  .score,
-  .roundResult {
+  .score {
     font-size: 40px;
+  }
+  .roundResult {
+    font-size: 25px;
   }
   #rock img {
     margin-right: 8em;
@@ -303,9 +305,11 @@ p {
   }
   #label-you,
   #label-haters,
-  .score,
-  .roundResult {
+  .score {
     font-size: 30px;
+  }
+  .roundResult {
+    font-size: 20px;
   }
   #rock img {
     margin-right: 6em;
@@ -339,5 +343,32 @@ p {
   }
   #scissors img {
     margin-left: 5em;
+  }
+}
+
+@media (max-height: 1000px) {
+  #btn-container {
+    margin-top: 4em;
+  }
+  h1,
+  h2 {
+    margin: 0.5em;
+  }
+  #score-label {
+    margin-top: 0em;
+  }
+}
+
+@media (max-height: 880px) {
+  #btn-container {
+    margin-top: 3em;
+  }
+  h1,
+  h2 {
+    margin: 0.3em;
+  }
+  #label-you,
+  #haters-label {
+    margin-bottom: 0.53em;
   }
 }
