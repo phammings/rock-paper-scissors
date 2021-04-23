@@ -94,17 +94,15 @@ function declareWinner(playerScore, computerScore) {
   const endScreen = document.querySelector("#end-screen");
   const video = document.getElementById("end-video");
   const audio = document.getElementById("end-audio");
-  const source = document.createElement("source");
-  const source2 = document.createElement("source");
 
   if (playerScore > computerScore) {
     winningEnd();
-    source.setAttribute("src", "Video/WinningScreen2.mp4");
-    source2.setAttribute("src", "Audio/WinningSong2.wav");
+    video.setAttribute("src", "Video/WinningScreen2.mp4");
+    audio.setAttribute("src", "Audio/WinningSong2.wav");
   } else {
     losingEnd();
-    source.setAttribute("src", "Video/LosingScreen.mp4");
-    source2.setAttribute("src", "Audio/LosingSong.wav");
+    video.setAttribute("src", "Video/LosingScreen.mp4");
+    audio.setAttribute("src", "Audio/LosingSong.wav");
   }
   roundWinnerContainer.appendChild(roundWinner);
   playAgain();
@@ -112,16 +110,18 @@ function declareWinner(playerScore, computerScore) {
   endScreen.classList.add("end-fade-in");
   endScreen.classList.remove("endScreen");
   endScreen.classList.add("fade");
-  video.appendChild(source);
-  audio.appendChild(source2);
 }
 
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
-  playerSelection = "";
-  computerSelection = "";
-  location.reload();
+  const roundResultContainer = document.querySelector(".roundResult");
+  const playerScoreDiv = document.querySelector("#you-label");
+  const computerScoreDiv = document.querySelector("#haters-label");
+  roundResultContainer.textContent = "";
+  playerScoreDiv.textContent = "0";
+  computerScoreDiv.textContent = "0";
+  skipOutro();
 }
 
 function playAgain() {
@@ -198,13 +198,34 @@ function skipIntro() {
   intro3.classList.remove("hidden");
 }
 
+function skipOutro() {
+  const endScreen = document.querySelector("#end-screen");
+  endScreen.classList.add("endScreen");
+  endScreen.classList.add("hidden");
+
+  const gameCtn = document.querySelector("#game-container");
+  const main = document.querySelector("main");
+
+  gameCtn.classList.remove("hidden");
+  main.classList.remove("hidden");
+  main.classList.remove("img-fade-out");
+  gameCtn.classList.add("game-fade-in");
+
+  const video = document.getElementById("end-video");
+  const audio = document.getElementById("end-audio");
+
+  video.setAttribute("src", "");
+  audio.setAttribute("src", "");
+
+  loadGame(false);
+}
+
 function loadGame(val) {
   if (val) {
     skipIntro();
   }
 
   const subtitle = document.querySelector("#subtitle");
-
   subtitle.classList.add("drop-down");
 
   subtitle.addEventListener("animationend", () => {
@@ -249,5 +270,4 @@ function fadeIn() {
   }
 }
 
-//add function to skip intro
 //after playAgain() skip intro screen instead of window.reload()
