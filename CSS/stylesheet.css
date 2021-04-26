@@ -161,7 +161,10 @@ h2,
   font-family: "Hanalei Fill", cursive;
   color: white;
   text-align: center;
-  margin: 14em auto auto auto;
+  position: absolute;
+  margin: 9.2em auto 1em auto;
+  left: 0;
+  right: 0;
   width: 61.5%;
   height: 3em;
   opacity: 0.75;
@@ -182,7 +185,10 @@ h2,
 .roundWinner {
   font-size: 40px;
   color: white;
-  margin: 6.5em 6.5em 6.5em 0em;
+  position: absolute;
+  margin: 3.75em auto 1em auto;
+  left: 0;
+  right: 0;
   width: 100%;
 }
 
@@ -333,57 +339,6 @@ p {
   #score-label {
     margin-top: 0em;
   }
-
-  .playAgain {
-    text-align: center;
-    padding-left: 5em;
-    padding-right: 5em;
-    margin: 13em auto auto auto;
-    width: 50%;
-    height: 2.75em;
-    font-size: 18px;
-  }
-
-  .roundWinner {
-    margin-left: 2em;
-    font-size: 30px;
-    color: white;
-    margin: 0;
-    padding: 6.5em 2.6em 3.5em 2.6em;
-    width: 80%;
-  }
-}
-
-@media (max-width: 960px) {
-  .roundWinner {
-    margin-left: 2em;
-    font-size: 30px;
-    color: white;
-    margin: 0;
-    padding: 6.5em 1.5em 3.5em 1.5em;
-    width: 80%;
-  }
-  .playAgain {
-    text-align: center;
-    padding-left: 3em;
-    padding-right: 3em;
-    margin: 13em auto auto auto;
-  }
-}
-
-@media (max-height: 540px) {
-  .playAgain {
-    padding-left: 10em;
-    padding-right: 10em;
-    margin: 11em auto auto auto;
-  }
-
-  .roundWinner {
-    font-size: 30px;
-    color: white;
-    padding: 6.5em 1.3em 3.5em 1em;
-    font-size: 25px;
-  }
 }
 
 @media (max-width: 580px), (max-height: 540px) {
@@ -423,19 +378,6 @@ p {
   #haters-label {
     margin-bottom: 0em;
   }
-
-  .playAgain {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    margin: 11em auto auto auto;
-  }
-
-  .roundWinner {
-    font-size: 30px;
-    color: white;
-    padding: 6.5em 1.3em 3.5em 1em;
-    font-size: 25px;
-  }
 }
 
 @media (max-width: 440px), (max-height: 430px) {
@@ -456,18 +398,6 @@ p {
   .score,
   .roundResult {
     font-size: 15px;
-  }
-
-  .playAgain {
-    font-size: 16px;
-    padding-left: 1em;
-    padding-right: 1em;
-    margin: 9.5em auto auto auto;
-  }
-  .roundWinner {
-    color: white;
-    padding: 6em 1em 3.5em 1em;
-    font-size: 20px;
   }
 }
 
