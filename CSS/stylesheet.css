@@ -254,10 +254,10 @@ p {
 }
 
 #da-baby-intro {
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 
 .score {
